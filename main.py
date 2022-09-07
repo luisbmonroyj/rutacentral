@@ -4,11 +4,7 @@ from flask_cors import CORS
 import json
 from waitress import serve
 from database import db
-from blueprints import mesas_blueprint
-from blueprints import partido_blueprint
-from blueprints import candidatos_blueprint
-from blueprints import resultados_blueprint
-
+from blueprints import conductor_blueprint
 
 def loadFileConfig():
     """Carga la Configuracion para waitress"""
@@ -37,7 +33,7 @@ def create_app():
     db.init_app(app)
 
     #  Swagger
-    app.config["API_TITLE"] = "Backend Registraduria Ciclo4AGrupo3Equipo1"
+    app.config["API_TITLE"] = "Backend Ruta Central"
     app.config["API_VERSION"] = "0.1.0"
     app.config["OPENAPI_VERSION"] = "3.0.2"
     app.config["OPENAPI_JSON_PATH"] = "api-spec.json"
@@ -47,10 +43,10 @@ def create_app():
 
     # Registrar Blueprints
     api = Api(app)
-    api.register_blueprint(mesas_blueprint.mesasBlueprint)
-    api.register_blueprint(partido_blueprint.partidosBlueprint)
-    api.register_blueprint(candidatos_blueprint.candidatosBlueprint)
-    api.register_blueprint(resultados_blueprint.resultadosBlueprint)
+    api.register_blueprint(conductor_blueprint.conductorBlueprint)
+    # api.register_blueprint(partido_blueprint.partidosBlueprint)
+    # api.register_blueprint(candidatos_blueprint.candidatosBlueprint)
+    # api.register_blueprint(resultados_blueprint.resultadosBlueprint)
 
     return app
 

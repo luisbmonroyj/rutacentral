@@ -110,6 +110,9 @@ ENV/
 env.bak/
 venv.bak/
 
+#database settings
+dbSettings.json
+
 # Spyder project settings
 .spyderproject
 .spyproject
