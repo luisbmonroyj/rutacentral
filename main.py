@@ -5,6 +5,7 @@ import json
 from waitress import serve
 from database import db
 from blueprints import conductor_blueprint
+from blueprints import vehiculo_data_blueprint
 
 def loadFileConfig():
     """Carga la Configuracion para waitress"""
@@ -44,6 +45,7 @@ def create_app():
     # Registrar Blueprints
     api = Api(app)
     api.register_blueprint(conductor_blueprint.conductorBlueprint)
+    api.register_blueprint(vehiculo_data_blueprint.vehiculo_dataBlueprint)
     # api.register_blueprint(partido_blueprint.partidosBlueprint)
     # api.register_blueprint(candidatos_blueprint.candidatosBlueprint)
     # api.register_blueprint(resultados_blueprint.resultadosBlueprint)

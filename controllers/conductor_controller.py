@@ -27,7 +27,7 @@ def delete(cedula: int) -> dict:
 def get() -> dict:
     "Permite Listar los conductores creados"
     list_conductor = Conductor.query.all()
-    return jsonify(Ejemplo=[i.serialize for i in list_conductor])
+    return jsonify(Conductor=[i.serialize for i in list_conductor])
 
 #
 # def patch(campo1: int, campo2: str, campo3: datetime, ...) -> dict:
@@ -42,7 +42,7 @@ def patch(cedula: int, apellido: str, nombre: str, telefono: str) -> dict:
     #...
     db.session.add(patch_conductor)
     db.session.commit()
-    respuesta = {"Respuesta": f"Se actualizó el Conduuctor con cedula {cedula},"
+    respuesta = {"Respuesta": f"Se actualizó el Conductor con cedula {cedula},"
                               f" apellido = {apellido},nombre = {nombre},telefono = {telefono}"}
   # noqa: 501
     return respuesta

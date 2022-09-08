@@ -60,7 +60,7 @@ def update_conductor(data):
     nombre = data["nombre"]
     telefono = data["telefono"]
     # ...
-    actualizar = controlador_ejemplo.patch(cedula,apellido,nombre,telefono)  # ,...)
+    actualizar = conductor_controller.patch(cedula,apellido,nombre,telefono)  # ,...)
 
     return make_response(actualizar, 200)
 

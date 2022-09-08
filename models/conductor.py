@@ -20,7 +20,7 @@ class Conductor(db.Model):
     #campo3 = db.Column(db.DateTime)
     #... y los campos que vaya a tener la tabla
     #si alguno de los campos se usa en otra tabla como FK, se debe instanciar
-    #vehiculo_datos = db.relationship("vehiculo_datos")
+    vehiculo_data = db.relationship("VehiculoData")
 
     def __init__(self, cedula: int, apellido: str, nombre: str, telefono: str):    #...):
         """Inicializar Modelo Conductor, con los campos de la tabla"""
